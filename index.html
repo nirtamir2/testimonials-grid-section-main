@@ -12,6 +12,10 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | Testimonials Grid Section Main</title>
 
@@ -131,7 +135,7 @@
         box-shadow: var(--box-shadow);
 
         grid-column: span 2;
-        
+
         display: flex;
         flex-direction: column;
         gap: var(--gutter-small);
@@ -145,7 +149,6 @@
         background-image: url("./images/bg-pattern-quotation.svg");
         background-repeat: no-repeat;
         background-position: right 100px top;
-
       }
 
       .card--gray {
@@ -197,7 +200,7 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
- 
+
       @media screen and (max-width: 375px) {
         .cards {
           padding: var(--gutter-small);
@@ -339,10 +342,10 @@
           <h6 class="card__title card__title--light">
             An overall wonderful and rewarding experience
           </h6>
-          <div class="card__content card__content--light">
+          <blockquote class="card__content card__content--light">
             “ Thank you for the wonderful experience! I now have a job I really
             enjoy, and make a good living while doing something I love. ”
-          </div>
+          </blockquote>
         </article>
         <article class="card card--black card--stretch-horizontal">
           <div class="writer">
@@ -369,18 +372,14 @@
             personal attention you need from an incredible community of smart
             and amazing people. ”
           </blockquote>
-        </div>
-      </article>
+        </article>
+      </div>
     </main>
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="https://nirtamir.com">Nir Tamir</a>.
-    </div>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
+    </footer>
   </body>
 </html>
