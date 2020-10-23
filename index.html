@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <meta
+      name="viewport"
+      card__content="width=device-width, initial-scale=1.0"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -12,21 +13,17 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <title>Frontend Mentor | Testimonials Grid Section Main</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       :root {
         /* Colors */
-        /* Primary */
         --moderate-violet: hsl(263, 55%, 52%);
         --very-dark-grayish-blue: hsl(217, 19%, 35%);
         --very-dark-blackish-blue: hsl(219, 29%, 14%);
         --very-dark-blackish-blue-50: hsla(219, 29%, 14%, 0.5);
         --very-dark-blackish-blue-70: hsla(219, 29%, 14%, 0.7);
         --white: hsl(0, 0%, 100%);
-
-        /* Neutral */
         --light-gray: hsl(0, 0%, 81%);
         --light-gray-50: hsla(0, 0%, 81%, 0.5);
         --light-gray-70: hsla(0, 0%, 81%, 0.7);
@@ -53,7 +50,7 @@
 
         /* Spacing */
         --gutter: 20px;
-        --gutter-large: 100px;
+        --gutter-large: 90px;
         --gutter-small: 15px;
 
         --max-width: 1000px;
@@ -78,10 +75,10 @@
         background-color: var(--light-grayish-blue);
       }
 
-      .avatar-img {
-        grid-row: span 2;
-        border-radius: var(--border-radius-round);
-        border: 1px solid var(--white);
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .writer {
@@ -93,50 +90,29 @@
         justify-content: start;
       }
 
-      .writer-name {
+      .writer__avatar {
+        grid-row: span 2;
+        border-radius: var(--border-radius-round);
+        border: 1px solid var(--white);
+      }
+
+      .writer__name {
         font-size: var(--font-size-medium);
         font-weight: var(--font-weight-bold);
         color: var(--light-gray);
       }
 
-      .writer-details {
+      .writer__name--light {
+        color: var(--very-dark-blackish-blue);
+      }
+
+      .writer__details {
         font-size: var(--font-size-small);
         color: var(--light-gray-50);
       }
 
-      .title {
-        font-size: var(--font-size-large);
-        font-weight: var(--font-weight-bold);
-        color: var(--light-grayish-blue);
-      }
-
-      .content {
-        font-size: var(--font-size);
-        color: var(--light-grayish-blue-70);
-      }
-
-      .writer-name--light {
-        color: var(--very-dark-blackish-blue);
-      }
-
-      .writer-details--light {
+      .writer__details--light {
         color: var(--very-dark-blackish-blue-50);
-      }
-
-      .title--light {
-        color: var(--very-dark-blackish-blue);
-      }
-
-      .content--light {
-        color: var(--very-dark-blackish-blue-70);
-      }
-
-      .container {
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
 
       .cards {
@@ -155,8 +131,8 @@
         box-shadow: var(--box-shadow);
 
         display: flex;
-        gap: var(--gutter-small);
         flex-direction: column;
+        gap: var(--gutter-small);
       }
 
       .card--violet {
@@ -175,20 +151,40 @@
         background-color: var(--white);
       }
 
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-
       .card--stretch-horizontal {
         grid-column: span 2;
       }
 
       .card--stretch-vertical {
         grid-row: span 2;
+      }
+
+      .card__title {
+        font-size: var(--font-size-large);
+        font-weight: var(--font-weight-bold);
+        color: var(--light-grayish-blue);
+      }
+
+      .card__title--light {
+        color: var(--very-dark-blackish-blue);
+      }
+
+      .card__content {
+        font-size: var(--font-size);
+        color: var(--light-grayish-blue-70);
+      }
+
+      .card__content--light {
+        color: var(--very-dark-blackish-blue-70);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
       }
 
       @media screen and (max-width: 375px) {
@@ -226,17 +222,17 @@
               width="25"
               src="./images/image-daniel.jpg"
               alt="Daniel Clifford"
-              class="avatar-img"
+              class="writer__avatar"
             />
-            <div class="writer-name">Daniel Clifford</div>
-            <div class="writer-details">Verified Graduate</div>
+            <div class="writer__name">Daniel Clifford</div>
+            <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="title">
+          <div class="card__title">
             I received a job offer mid-course, and the subjects I learned were
             current, if not more so, in the company I joined. I honestly feel I
             got every penny’s worth.
           </div>
-          <div class="content">
+          <div class="card__content">
             “ I was an EMT for many years before I joined the bootcamp. I’ve
             been looking to make a transition and have heard some people who had
             an amazing experience here. I signed up for the free intro course
@@ -253,15 +249,15 @@
               width="25"
               src="./images/image-jonathan.jpg"
               alt="Jonathan Walters"
-              class="avatar-img"
+              class="writer__avatar"
             />
-            <div class="writer-name">Jonathan Walters</div>
-            <div class="writer-details">Verified Graduate</div>
+            <div class="writer__name">Jonathan Walters</div>
+            <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="title">
+          <div class="card__title">
             The team was very supportive and kept me motivated
           </div>
-          <div class="content">
+          <div class="card__content">
             “ I started as a total newbie with virtually no coding skills. I now
             work as a mobile engineer for a big company. This was one of the
             best investments I’ve made in myself. ”
@@ -274,17 +270,17 @@
               width="25"
               src="./images/image-kira.jpg"
               alt="Kira Whittle"
-              class="avatar-img"
+              class="writer__avatar"
             />
-            <div class="writer-name writer-name--light">Kira Whittle</div>
-            <div class="writer-details writer-details--light">
+            <div class="writer__name writer__name--light">Kira Whittle</div>
+            <div class="writer__details writer__details--light">
               Verified Graduate
             </div>
           </div>
-          <div class="title title--light">
+          <div class="card__title card__title--light">
             Such a life-changing experience. Highly recommended!
           </div>
-          <div class="content content--light">
+          <div class="card__content card__content--light">
             “ Before joining the bootcamp, I’ve never written a line of code. I
             needed some structure from professionals who can help me learn
             programming step by step. I was encouraged to enroll by a former
@@ -306,17 +302,17 @@
               width="25"
               src="./images/image-jeanette.jpg"
               alt="Jeanette Harmon"
-              class="avatar-img"
+              class="writer__avatar"
             />
-            <div class="writer-name writer-name--light">Jeanette Harmon</div>
-            <div class="writer-details writer-details--light">
+            <div class="writer__name writer__name--light">Jeanette Harmon</div>
+            <div class="writer__details writer__details--light">
               Verified Graduate
             </div>
           </div>
-          <div class="title title--light">
+          <div class="card__title card__title--light">
             An overall wonderful and rewarding experience
           </div>
-          <div class="content content--light">
+          <div class="card__content card__content--light">
             “ Thank you for the wonderful experience! I now have a job I really
             enjoy, and make a good living while doing something I love. ”
           </div>
@@ -328,17 +324,17 @@
               width="25"
               src="./images/image-patrick.jpg"
               alt="Patrick Abrams"
-              class="avatar-img"
+              class="writer__avatar"
             />
-            <div class="writer-name">Patrick Abrams</div>
-            <div class="writer-details">Verified Graduate</div>
+            <div class="writer__name">Patrick Abrams</div>
+            <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="title">
+          <div class="card__title">
             Awesome teaching support from TAs who did the bootcamp themselves.
             Getting guidance from them and learning from their experiences was
             easy.
           </div>
-          <div class="content">
+          <div class="card__content">
             “ The staff seem genuinely concerned about my progress which I find
             really refreshing. The program gave me the confidence necessary to
             be able to go out in the world and present myself as a capable
