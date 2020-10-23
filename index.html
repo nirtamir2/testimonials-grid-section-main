@@ -22,6 +22,8 @@
         --moderate-violet: hsl(263, 55%, 52%);
         --very-dark-grayish-blue: hsl(217, 19%, 35%);
         --very-dark-blackish-blue: hsl(219, 29%, 14%);
+        --very-dark-blackish-blue-50: hsla(219, 29%, 14%, 0.5);
+        --very-dark-blackish-blue-70: hsla(219, 29%, 14%, 0.7);
         --white: hsl(0, 0%, 100%);
 
         /* Neutral */
@@ -39,6 +41,12 @@
 
         --font-family: "Barlow Semi Condensed", sans-serif;
 
+        --font-weight-bold: 600;
+        --font-weight-normal: 500;
+
+        --letter-spacing: auto;
+        --line-height: 1.3;
+
         /* Border Radius */
         --border-radius-round: 100000rem;
         --border-radius: 6px;
@@ -48,20 +56,26 @@
         --gutter-large: 100px;
         --gutter-small: 15px;
 
+        --max-width: 1000px;
+
         /* Box-Shadows */
         --box-shadow: var(--light-gray) 5px 5px 20px;
       }
 
       body {
-        font-family: var(--font-family);
-        font-size: var(--font-size);
-        background-color: var(--light-grayish-blue);
-
         /* Fill available like 100vh but works well in mobile */
         height: 100%;
         height: -moz-available; /* WebKit-based browsers will ignore this. */
         height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
         height: fill-available;
+
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-normal);
+        font-size: var(--font-size);
+        letter-spacing: var(--letter-spacing);
+        line-height: var(--line-height);
+
+        background-color: var(--light-grayish-blue);
       }
 
       .avatar-img {
@@ -81,12 +95,40 @@
 
       .writer-name {
         font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
         color: var(--light-gray);
       }
 
       .writer-details {
         font-size: var(--font-size-small);
         color: var(--light-gray-50);
+      }
+
+      .title {
+        font-size: var(--font-size-large);
+        font-weight: var(--font-weight-bold);
+        color: var(--light-grayish-blue);
+      }
+
+      .content {
+        font-size: var(--font-size);
+        color: var(--light-grayish-blue-70);
+      }
+
+      .writer-name--light {
+        color: var(--very-dark-blackish-blue);
+      }
+
+      .writer-details--light {
+        color: var(--very-dark-blackish-blue-50);
+      }
+
+      .title--light {
+        color: var(--very-dark-blackish-blue);
+      }
+
+      .content--light {
+        color: var(--very-dark-blackish-blue-70);
       }
 
       .container {
@@ -98,6 +140,7 @@
       }
 
       .cards {
+        max-width: var(--max-width);
         padding: var(--gutter-large);
 
         display: grid;
@@ -116,30 +159,20 @@
         flex-direction: column;
       }
 
-      .violet {
+      .card--violet {
         background-color: var(--moderate-violet);
       }
 
-      .gray {
+      .card--gray {
         background-color: var(--very-dark-grayish-blue);
       }
 
-      .black {
+      .card--black {
         background-color: var(--very-dark-blackish-blue);
       }
 
-      .white {
+      .card--white {
         background-color: var(--white);
-      }
-
-      .title {
-        font-size: var(--font-size-large);
-        color: var(--light-grayish-blue);
-      }
-
-      .content {
-        font-size: var(--font-size);
-        color: var(--light-grayish-blue-70);
       }
 
       .attribution {
@@ -150,11 +183,11 @@
         color: hsl(228, 45%, 44%);
       }
 
-      .stretch-horizontal {
+      .card--stretch-horizontal {
         grid-column: span 2;
       }
 
-      .stretch-vertical {
+      .card--stretch-vertical {
         grid-row: span 2;
       }
 
@@ -165,11 +198,11 @@
           grid-template-rows: auto;
         }
 
-        .stretch-horizontal {
+        .card--stretch-horizontal {
           grid-column: auto;
         }
 
-        .stretch-vertical {
+        .card--stretch-vertical {
           grid-row: auto;
         }
       }
@@ -186,7 +219,7 @@
   <body>
     <div class="container">
       <div class="cards">
-        <div class="card violet stretch-horizontal">
+        <div class="card card--violet card--stretch-horizontal">
           <div class="writer">
             <img
               height="25"
@@ -213,7 +246,7 @@
             as a Software Engineer at a VR startup. ”
           </div>
         </div>
-        <div class="card gray">
+        <div class="card card--gray">
           <div class="writer">
             <img
               height="25"
@@ -234,8 +267,8 @@
             best investments I’ve made in myself. ”
           </div>
         </div>
-        <div class="card white stretch-vertical">
-          <div class="writer">
+        <div class="card card--white card--stretch-vertical">
+          <div class="writer writer--light">
             <img
               height="25"
               width="25"
@@ -243,13 +276,15 @@
               alt="Kira Whittle"
               class="avatar-img"
             />
-            <div class="writer-name">Kira Whittle</div>
-            <div class="writer-details">Verified Graduate</div>
+            <div class="writer-name writer-name--light">Kira Whittle</div>
+            <div class="writer-details writer-details--light">
+              Verified Graduate
+            </div>
           </div>
-          <div class="title">
+          <div class="title title--light">
             Such a life-changing experience. Highly recommended!
           </div>
-          <div class="content">
+          <div class="content content--light">
             “ Before joining the bootcamp, I’ve never written a line of code. I
             needed some structure from professionals who can help me learn
             programming step by step. I was encouraged to enroll by a former
@@ -264,7 +299,7 @@
             recommend! ”
           </div>
         </div>
-        <div class="card white">
+        <div class="card card--white">
           <div class="writer">
             <img
               height="25"
@@ -273,16 +308,20 @@
               alt="Jeanette Harmon"
               class="avatar-img"
             />
-            <div class="writer-name">Jeanette Harmon</div>
-            <div class="writer-details">Verified Graduate</div>
+            <div class="writer-name writer-name--light">Jeanette Harmon</div>
+            <div class="writer-details writer-details--light">
+              Verified Graduate
+            </div>
           </div>
-          <div class="title">An overall wonderful and rewarding experience</div>
-          <div class="content">
+          <div class="title title--light">
+            An overall wonderful and rewarding experience
+          </div>
+          <div class="content content--light">
             “ Thank you for the wonderful experience! I now have a job I really
             enjoy, and make a good living while doing something I love. ”
           </div>
         </div>
-        <div class="card black stretch-horizontal">
+        <div class="card card--black card--stretch-horizontal">
           <div class="writer">
             <img
               height="25"
@@ -314,7 +353,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://nirtamir.com">Nir Tamir</a>.
     </div>
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap"
