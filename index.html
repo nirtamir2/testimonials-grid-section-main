@@ -59,12 +59,13 @@
         --box-shadow: var(--light-gray) 5px 5px 20px;
       }
 
+      html {
+        height: -webkit-fill-available;
+      }
+
       body {
-        /* Fill available like 100vh but works well in mobile */
-        height: 100%;
-        height: -moz-available; /* WebKit-based browsers will ignore this. */
-        height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-        height: fill-available;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
 
         font-family: var(--font-family);
         font-weight: var(--font-weight-normal);
@@ -73,9 +74,15 @@
         line-height: var(--line-height);
 
         background-color: var(--light-grayish-blue);
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--gutter);
       }
 
       .container {
+        flex: 1;
+
         display: flex;
         align-items: center;
         justify-content: center;
