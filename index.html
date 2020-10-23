@@ -49,11 +49,11 @@
         --border-radius: 6px;
 
         /* Spacing */
-        --gutter: 20px;
+        --gutter: 25px;
         --gutter-large: 90px;
         --gutter-small: 15px;
 
-        --max-width: 1000px;
+        --max-width: 1100px;
 
         /* Box-Shadows */
         --box-shadow: var(--light-gray) 5px 5px 20px;
@@ -120,7 +120,7 @@
         padding: var(--gutter-large);
 
         display: grid;
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(12, auto);
         grid-template-rows: repeat(2, auto);
         gap: var(--gutter);
       }
@@ -130,6 +130,8 @@
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
 
+        grid-column: span 2;
+        
         display: flex;
         flex-direction: column;
         gap: var(--gutter-small);
@@ -152,7 +154,7 @@
       }
 
       .card--stretch-horizontal {
-        grid-column: span 2;
+        grid-column: span 7;
       }
 
       .card--stretch-vertical {
@@ -160,6 +162,7 @@
       }
 
       .card__title {
+        margin: 0;
         font-size: var(--font-size-large);
         font-weight: var(--font-weight-bold);
         color: var(--light-grayish-blue);
@@ -213,9 +216,9 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <div class="cards">
-        <div class="card card--violet card--stretch-horizontal">
+        <article class="card card--violet card--stretch-horizontal">
           <div class="writer">
             <img
               height="25"
@@ -227,11 +230,11 @@
             <div class="writer__name">Daniel Clifford</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="card__title">
+          <h6 class="card__title">
             I received a job offer mid-course, and the subjects I learned were
             current, if not more so, in the company I joined. I honestly feel I
             got every penny’s worth.
-          </div>
+          </h6>
           <div class="card__content">
             “ I was an EMT for many years before I joined the bootcamp. I’ve
             been looking to make a transition and have heard some people who had
@@ -241,8 +244,8 @@
             completing the course, I’ve successfully switched careers, working
             as a Software Engineer at a VR startup. ”
           </div>
-        </div>
-        <div class="card card--gray">
+        </article>
+        <article class="card card--gray">
           <div class="writer">
             <img
               height="25"
@@ -254,16 +257,16 @@
             <div class="writer__name">Jonathan Walters</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="card__title">
+          <h6 class="card__title">
             The team was very supportive and kept me motivated
-          </div>
+          </h6>
           <div class="card__content">
             “ I started as a total newbie with virtually no coding skills. I now
             work as a mobile engineer for a big company. This was one of the
             best investments I’ve made in myself. ”
           </div>
-        </div>
-        <div class="card card--white card--stretch-vertical">
+        </article>
+        <article class="card card--white card--stretch-vertical">
           <div class="writer writer--light">
             <img
               height="25"
@@ -277,9 +280,9 @@
               Verified Graduate
             </div>
           </div>
-          <div class="card__title card__title--light">
+          <h6 class="card__title card__title--light">
             Such a life-changing experience. Highly recommended!
-          </div>
+          </h6>
           <div class="card__content card__content--light">
             “ Before joining the bootcamp, I’ve never written a line of code. I
             needed some structure from professionals who can help me learn
@@ -294,8 +297,8 @@
             job as a full-stack developer after receiving multiple offers. 100%
             recommend! ”
           </div>
-        </div>
-        <div class="card card--white">
+        </article>
+        <article class="card card--white">
           <div class="writer">
             <img
               height="25"
@@ -309,15 +312,15 @@
               Verified Graduate
             </div>
           </div>
-          <div class="card__title card__title--light">
+          <h6 class="card__title card__title--light">
             An overall wonderful and rewarding experience
-          </div>
+          </h6>
           <div class="card__content card__content--light">
             “ Thank you for the wonderful experience! I now have a job I really
             enjoy, and make a good living while doing something I love. ”
           </div>
-        </div>
-        <div class="card card--black card--stretch-horizontal">
+        </article>
+        <article class="card card--black card--stretch-horizontal">
           <div class="writer">
             <img
               height="25"
@@ -329,11 +332,11 @@
             <div class="writer__name">Patrick Abrams</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <div class="card__title">
+          <h6 class="card__title">
             Awesome teaching support from TAs who did the bootcamp themselves.
             Getting guidance from them and learning from their experiences was
             easy.
-          </div>
+          </h6>
           <div class="card__content">
             “ The staff seem genuinely concerned about my progress which I find
             really refreshing. The program gave me the confidence necessary to
@@ -343,8 +346,8 @@
             and amazing people. ”
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
