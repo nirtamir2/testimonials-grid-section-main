@@ -128,7 +128,6 @@
 
         display: grid;
         grid-template-columns: repeat(4, minmax(auto, 1fr));
-        grid-template-rows: repeat(2, auto);
         gap: var(--gutter);
       }
 
@@ -202,10 +201,21 @@
         color: hsl(228, 45%, 44%);
       }
 
-      @media screen and (max-width: 675px) {
+      @media screen and (max-width: 1050px) {
+        .cards {
+          grid-template-columns: repeat(3, minmax(auto, 1fr));
+        }
+      }
+
+      @media screen and (max-width: 875px) {
+        .cards {
+          grid-template-columns: repeat(2, minmax(auto, 1fr));
+        }
+      }
+
+      @media screen and (max-width: 575px) {
         .cards {
           grid-template-columns: auto;
-          grid-template-rows: auto;
         }
 
         .card--stretch-horizontal {
@@ -239,11 +249,11 @@
             <div class="writer__name">Daniel Clifford</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <h6 class="card__title">
+          <h2 class="card__title">
             I received a job offer mid-course, and the subjects I learned were
             current, if not more so, in the company I joined. I honestly feel I
             got every penny’s worth.
-          </h6>
+          </h2>
           <blockquote class="card__content">
             “ I was an EMT for many years before I joined the bootcamp. I’ve
             been looking to make a transition and have heard some people who had
@@ -266,9 +276,9 @@
             <div class="writer__name">Jonathan Walters</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <h6 class="card__title">
+          <h2 class="card__title">
             The team was very supportive and kept me motivated
-          </h6>
+          </h2>
           <blockquote class="card__content">
             “ I started as a total newbie with virtually no coding skills. I now
             work as a mobile engineer for a big company. This was one of the
@@ -289,9 +299,9 @@
               Verified Graduate
             </div>
           </div>
-          <h6 class="card__title card__title--light">
+          <h2 class="card__title card__title--light">
             Such a life-changing experience. Highly recommended!
-          </h6>
+          </h2>
           <blockquote class="card__content card__content--light">
             “ Before joining the bootcamp, I’ve never written a line of code. I
             needed some structure from professionals who can help me learn
@@ -321,9 +331,9 @@
               Verified Graduate
             </div>
           </div>
-          <h6 class="card__title card__title--light">
+          <h2 class="card__title card__title--light">
             An overall wonderful and rewarding experience
-          </h6>
+          </h2>
           <blockquote class="card__content card__content--light">
             “ Thank you for the wonderful experience! I now have a job I really
             enjoy, and make a good living while doing something I love. ”
@@ -341,11 +351,11 @@
             <div class="writer__name">Patrick Abrams</div>
             <div class="writer__details">Verified Graduate</div>
           </div>
-          <h6 class="card__title">
+          <h2 class="card__title">
             Awesome teaching support from TAs who did the bootcamp themselves.
             Getting guidance from them and learning from their experiences was
             easy.
-          </h6>
+          </h2>
           <blockquote class="card__content">
             “ The staff seem genuinely concerned about my progress which I find
             really refreshing. The program gave me the confidence necessary to
